@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Experiences{% endblock %}
+{% block content %}
+<h1>Experiences</h1>
+
+<div class="projects-container">
+  <div class="project-card" data-aos="fade-up">
+    <img src="{{ url_for('static', filename='img/project1.png') }}" alt="Experience 1">
+    <h2>Committee</h2>
+    <p>Pengalaman Kepanitiaan</p>
+    <a href="{{ url_for('committee') }}" class="btn-project">View</a>
+  </div>
+
+  <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+    <img src="{{ url_for('static', filename='img/project2.png') }}" alt="Experience 2">
+    <h2>Organizational</h2>
+    <p>Pengalaman Keorganisasian</p>
+    <a href="{{ url_for('organizational') }}" class="btn-project">View</a>
+  </div>
+
+  <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+    <img src="{{ url_for('static', filename='img/project3.png') }}" alt="Experience 3">
+    <h2>Academic</h2>
+    <p>Pengalaman Akademik</p>
+    <a href="{{ url_for('academic') }}" class="btn-project">View</a>
+  </div>
+</div>
+{% endblock %}

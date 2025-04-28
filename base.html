@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Portfolio{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="layar-dalam">
+      <div class="profile">
+        <a href="{{ url_for('home') }}">
+          <img src="{{ url_for('static', filename='img/profile.png') }}" alt="Profile Picture" />
+        </a>
+      </div>
+      <div class="menu">
+        <ul>
+          <li><a href="{{ url_for('home') }}" class="{% if request.path == '/' %}active{% endif %}">About Me</a></li>
+          <li><a href="{{ url_for('projects') }}" class="{% if 'projects' in request.path %}active{% endif %}">Information</a></li>
+          <li><a href="{{ url_for('contacts') }}" class="{% if 'contacts' in request.path %}active{% endif %}">Contacts</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>+
+</html>
